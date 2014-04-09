@@ -36,7 +36,7 @@ END_OF_USAGE
       if result[:statuscode] != 0
         puts pattern % [result[:sender], MCollective::Util.colorize(:red, result[:statusmsg])]
       elsif result[data][:status] != 0
-        puts pattern % [result[:sender], MCollective::Util.colorize(:red, result[:data][:err]]
+        puts pattern % [result[:sender], MCollective::Util.colorize(:red, result[:data][:err])]
       end
     end
 
