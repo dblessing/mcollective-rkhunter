@@ -3,7 +3,7 @@ metadata    :name        => "rkhunter",
             :author      => "Drew A. Blessing <drew.blessing@mac.com>",
             :license     => "MIT",
             :version     => "0.1",
-            :url         => "http://github.com/dblessing/mcollective-rkhunter"
+            :url         => "http://github.com/dblessing/mcollective-rkhunter",
             :timeout     => 15
 
 action "propupd", :description => "Runs rkhunter with the --propupd flag" do
