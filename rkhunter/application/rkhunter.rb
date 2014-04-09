@@ -22,13 +22,24 @@ END_OF_USAGE
     @client ||= rpcclient("rkhunter")
   end
 
+  def calculate_longest_hostname(results)
+    results.map{|s| s[:sender]}.map{|s| s.length}.max
+  end
+
   def propupd_command
     results = client.propupd
     status  = results[:body][:data][:status]
     err     = results[:body][:data][:err]
 
-    if status != 0
-      printf("Propupd error: %s\n", err)
+    sender_width = calculate_longest_hostname(results) + 3
+    pattern = "%%%ds: %%s" % sender_width
+
+    Array(results).each do |result|
+      if result[:statuscode] != 0
+        puts pattern % [result[:sender], MCollective::Util.colorize(:red, result[:statusmsg])]
+      elsif result[:status] != 0
+        puts pattern % [result[:sender], result[:data][:err]]
+      end
     end
 
     halt client.stats
