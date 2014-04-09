@@ -13,7 +13,7 @@ Using this agent and client you can quickly run `rkhunter --propupd` across all 
 1. Clone this repo
 2. Run `mco plugin package`
 3. Install the resulting packages on your nodes
-4. Run `mco rkhunter propupd` plus any options or filters.
+4. Run `mco rkhunter propupd`.  Add any MCollective options or filters to further narrow the targeted nodes.
 
 ## License
 
