@@ -35,8 +35,8 @@ END_OF_USAGE
     Array(results).each do |result|
       if result[:statuscode] != 0
         puts pattern % [result[:sender], MCollective::Util.colorize(:red, result[:statusmsg])]
-      elsif result[:status] != 0
-        puts pattern % [result[:sender], result[:data][:err]]
+      elsif result[data][:status] != 0
+        puts pattern % [result[:sender], MCollective::Util.colorize(:red, result[:data][:err]]
       end
     end
 
