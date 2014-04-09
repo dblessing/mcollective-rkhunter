@@ -34,7 +34,7 @@ END_OF_USAGE
     if respond_to?(impl_method)
       send(impl_method)
     else
-      raise_message(6, configuration[:command])
+      raise "Do not know how to handle the '%s' command" % [configuration[:command]]
     end
   end
 end
