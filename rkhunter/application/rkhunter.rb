@@ -28,8 +28,6 @@ END_OF_USAGE
 
   def propupd_command
     results = client.propupd
-    status  = results[:body][:data][:status]
-    err     = results[:body][:data][:err]
 
     sender_width = calculate_longest_hostname(results) + 3
     pattern = "%%%ds: %%s" % sender_width
