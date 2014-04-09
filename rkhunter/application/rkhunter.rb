@@ -12,6 +12,10 @@ The ACTION can be one of the following:
   propupd - run rkhunter with the --propupd flag
 END_OF_USAGE
 
+  def post_option_parser(configuration)
+    if ARGV.length >= 1
+      configuration[:command] = ARGV.shift
+    end
   def client
     @client ||= rpcclient("rkhunter")
   end
