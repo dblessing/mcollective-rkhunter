@@ -29,7 +29,7 @@ END_OF_USAGE
   def propupd_command
     results = client.propupd
 
-    sender_width = calculate_longest_hostname(results) + 3
+    sender_width = results.size > 0 ? calculate_longest_hostname(results) + 3 : 0
     pattern = "%%%ds: %%s" % sender_width
 
     Array(results).each do |result|
