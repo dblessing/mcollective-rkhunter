@@ -27,4 +27,14 @@ END_OF_USAGE
 
     halt client.stats
   end
+
+  def main
+    impl_method = "%s_command" % configuration[:command]
+
+    if respond_to?(impl_method)
+      send(impl_method)
+    else
+      raise_message(6, configuration[:command])
+    end
+  end
 end
