@@ -16,6 +16,8 @@ END_OF_USAGE
     if ARGV.length >= 1
       configuration[:command] = ARGV.shift
     end
+  end
+
   def client
     @client ||= rpcclient("rkhunter")
   end
