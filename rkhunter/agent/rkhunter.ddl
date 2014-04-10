@@ -2,9 +2,9 @@ metadata    :name        => "rkhunter",
             :description => "Utility to assist in the update/management of rkhunter",
             :author      => "Drew A. Blessing <drew.blessing@mac.com>",
             :license     => "MIT",
-            :version     => "1.1",
+            :version     => "1.2",
             :url         => "http://github.com/dblessing/mcollective-rkhunter",
-            :timeout     => 15
+            :timeout     => 180
 
 action "propupd", :description => "Runs rkhunter with the --propupd flag" do
   output  :status,
